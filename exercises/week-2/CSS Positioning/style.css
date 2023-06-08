@@ -1,0 +1,60 @@
+#parent {
+  height: 300px;
+  width: 300px;
+  background-color: darkmagenta;  
+  display: inline-block;
+}
+
+#child1 {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: turquoise;
+}
+
+#child2 {
+  height: 100px;
+  width: 100px;
+  background-color: yellowgreen;
+}
+
+
+/*
+#parent{
+	background-color: red;
+	width: 300px;
+	height: 300px;
+  position: relative;
+}
+
+.child {
+	width: 100px;
+	height: 100px;
+  position: absolute;
+}
+
+#child1 {
+	background-color: blue;
+}
+
+#child2{
+  right: 0;
+	background-color: green;
+}
+
+#child3 {
+  bottom: 0;
+  background-color: gold;
+}
+
+#child4 {
+  bottom : 0;
+  right: 0;
+  background-color: purple;
+}
+
+#child5 {
+  left: calc(50% - 100px / 2);
+  top: calc(50% - 100px / 2);
+  background-color: white;
+}*/

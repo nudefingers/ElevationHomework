@@ -1,0 +1,24 @@
+body {
+    background-color: gray
+  }
+  
+  .box {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        border: 1px solid black
+  }
+
+  #first {
+    background-color: #19B391;
+  }
+
+  #second {
+    background-color: #DD7327;
+  }
+  
+  .button {
+    background-color: #2CCD65;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+    border: 1px solid seagreen
+  }

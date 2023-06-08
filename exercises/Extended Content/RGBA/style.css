@@ -1,0 +1,24 @@
+body {
+  background-image: url(https://www.appleyardflowers.com/blog/wp-content/uploads/2021/09/dry-press-flowers.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+div {
+  width: 400px;
+  height: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: xx-large;
+  display: grid;
+  place-items: center;
+}
+
+.transparent-title {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);    
+}
+
+.title {
+  background-color:  rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);    
+}

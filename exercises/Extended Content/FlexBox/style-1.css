@@ -1,0 +1,38 @@
+body {
+  background-color: ivory;
+}
+
+.parent {
+  display: flex;
+  height: 200px; /* Or whatever */
+  background-color: aqua;
+}
+
+.child {
+  width: 100px;  /* Or whatever */
+  height: 100px; /* Or whatever */
+  margin: auto;  /* Magic! */
+  background-color: pink;
+  color: aliceblue;
+  font-size: x-large;
+  border: 1px solid black;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: lime;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}

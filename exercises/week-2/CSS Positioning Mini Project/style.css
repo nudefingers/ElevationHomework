@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+}
+
+.deck {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4%;
+}
+
+.card:nth-child(1) {
+  position: absolute;
+  top: calc(50% - 100px);;
+  left: calc(50% - 100px);;
+  transform: translate(-50%, -50%);
+}
+
+.card:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card:nth-child(3) {
+  position: absolute;
+  top: calc(50% + 100px);
+  left: calc(50% + 100px);
+  transform: translate(-50%, -50%);
+}
+
+/* .card:nth-child(5) {
+  top: 240px;
+  left: 240px;
+} */
+
+
+.card-index {
+  font-size: 36px;
+  padding: 10px;
+  position: absolute;
+}
+
+.reverse {
+  transform: rotate(180deg);
+  bottom : 0;
+  right: 0;
+}
+
+.card-value {
+  padding: 20px;
+  font-size: 72px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.red {
+  color: red; 
+}
