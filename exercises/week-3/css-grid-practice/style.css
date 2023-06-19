@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+#container{
+    height: calc(100vh - 2*40px);
+    margin: 40px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr; 
+    grid-template-areas: "w w w r""f f f r""n n n n""- - s s""- - a a";
+}
+
+.figure {
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 1);
+    border: 1px solid;    
+}
+
+.white-container {
+    grid-area: w;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.white {
+    /* height: calc(100vh - 2*10px); */
+    height: 30px;
+    width: calc((100vh) / 4);
+    background-color: white;
+}
+
+.first {
+    grid-area: f;
+}
+
+.gray {
+    grid-area: r;
+    display: grid;
+}
+
+.round {
+    border-radius: 50%;
+    background: radial-gradient(circle, white 0%, black 100%);
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.navy {
+    grid-area: n;
+    background-color: navy;
+}
+
+.second {
+    grid-area: s;
+}
+
+.aqua {
+    grid-area: a;
+    background-color: deeppink;
+}
+
+.purple {
+    background-color: purple;
+}

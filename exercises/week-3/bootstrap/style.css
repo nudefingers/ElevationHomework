@@ -1,0 +1,9 @@
+.container{
+    height: 100vh;
+    display: grid;
+}
+
+.green {
+    background-color: aqua;
+    border: 1px solid;
+}

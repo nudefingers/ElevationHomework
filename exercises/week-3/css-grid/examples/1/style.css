@@ -1,16 +1,17 @@
 #container{
     height: 100vh;
     display: grid;
-    /* grid-gap: 10px; */
-    /* grid-template-columns: repeat(6, 1fr); */
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 3fr 1fr;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    /* grid-template-columns: 1fr 3fr;
+    grid-template-rows: 3fr 1fr; */
     grid-template-areas: 
-    /* "h h h h h h""s m m m m m""s m m m m m""s m m m m m""s f f f f f"; */
+    "h h h h h h""s m m m m m""s m m m m m""s m m m m m""s f f f f f";
     /* "h h h h h h""f f m s s s""f f m s s s""f f m s s s""f f m s s s"; */
     /* "h h f f s s""h h f f s s""h h - - s s""h h m m s s""h h m m s s"; */
-    "s m"
-    "f f";
+    /* "s m"
+    "f f"; */
 }
 
 .head{

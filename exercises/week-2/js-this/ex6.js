@@ -1,6 +1,5 @@
 const coffeeShop = {
   beans: 40,
-
   money: 40,
 
   drinkRequirements: {
@@ -12,16 +11,18 @@ const coffeeShop = {
 
   makeDrink: function (drinkType) {
     if (!(drinkType in this.drinkRequirements)) {
-      alert("Sorry, we don't make " + drinkType)
+      alert("Sorry, we don't make ${drinkType}")
       return
     } 
-      
-    if (this.drinkRequirements[drinkType].beanRequirement >= this.beans) {
+    
+    let beanRequirement = this.drinkRequirements[drinkType].beanRequirement
+
+    if (beanRequirement >= this.beans) {
         alert("Sorry, we're all out of beans!")
         return
     }
 
-    this.beans -= this.drinkRequirements[drinkType].beanRequirement
+    this.beans -= beanRequirement
     this.money += this.drinkRequirements[drinkType].price
   },
 

@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 30px;
+}
+
+#rubiksCube {
+    display: grid;
+    /* flex-wrap: wrap; */
+    width: 300px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+  .cube-piece {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+  }
