@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 30px;
+}
+
+#message {
+    padding: 30px;
+}
+
+#welcome {
+    display: none;
+}
