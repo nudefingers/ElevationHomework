@@ -33,23 +33,36 @@ $('.box').hover(
 
 
 // Exercise 4
+let cart = []
+
+$("#items .item[data-instock=true]").each(function () {
+    let item = $(this).text()
+    cart.push({ item: item, counter: 0 })
+})
+
+
 $(".item[data-instock=true]").click(function () {
     let text = $(this).text()
-    let lastChild = $("#cart .cart-item:last")
-    let lastText = lastChild.text()
+    let index = cart.findIndex(function (cartItem) {
+        return cartItem.item === text
+    })
 
-    if (lastText.includes(text)) {
-        if (!lastText.includes(" x")) {
-            lastChild.text(`${text} x2`)
-        } else {
-            let counter = parseInt(lastText.match(/\d+/)[0]) + 1
-            lastChild.text(`${text} x${counter}`)
+    cart[index].counter++
+    $(this).find(".counter").text(cart[index].counter)
+
+    $(`#cart`).empty()
+    cart.forEach(function (curent) {
+        let _item = curent.item
+        let _counter = curent.counter
+
+        if (_counter > 0) {
+            let _text = (_counter === 1) ? `${_item}` : `${_item} x${_counter}`
+            let curentItem = $(`<div class="cart-item">${_text}</div>`)
+            $("#cart").append(curentItem)
         }
-    } else {
-        let cartItem = $(`<div class="cart-item">${text}</div>`)
-        $("#cart").append(cartItem)
-    }
+    })
 })
+
 
 $("#cart").on("click", ".cart-item", function () {
     $(this).remove()
@@ -76,9 +89,9 @@ for (const fruit of fruits) {
 
 
 
-let posts = [{name: 'Shoobert'}, {name: 'Kayne'}]
+let posts = [{ name: 'Shoobert' }, { name: 'Kayne' }]
 
-for(let post of posts){
+for (let post of posts) {
     $("#posts").append(`
         <div>${post.name}</div><input type="text" placeholder="say something nice" />
     `)
