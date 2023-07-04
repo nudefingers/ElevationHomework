@@ -1,0 +1,132 @@
+{
+    "animals": [
+      {
+        "name": "Hummingbird",
+        "weight": {
+          "count": 0.0025,
+          "unit": "kg"
+        },
+        "habitat": "Tropical rainforests",
+        "endangered": false,
+        "foods": [
+          {
+            "name": "Nectar",
+            "percentage": 0.8
+          },
+          {
+            "name": "Insects",
+            "percentage": 0.2
+          }
+        ],
+        "predators": [
+          "Snakes",
+          "Birds of Prey"
+        ],
+        "deliciousness": 2
+      },
+      {
+        "name": "Cow",
+        "weight": {
+          "count": 700,
+          "unit": "kg"
+        },
+        "habitat": "Various habitats including grasslands, forests",
+        "endangered": false,
+        "foods": [
+          {
+            "name": "Grass",
+            "percentage": 0.6
+          },
+          {
+            "name": "Hay",
+            "percentage": 0.3
+          },
+          {
+            "name": "Silage",
+            "percentage": 0.1
+          }
+        ],
+        "predators": [],
+        "deliciousness": 4
+      },
+      {
+        "name": "Elephant",
+        "weight": {
+          "count": 6000,
+          "unit": "kg"
+        },
+        "habitat": "Various habitats including forests, savannas",
+        "endangered": true,
+        "foods": [
+          {
+            "name": "Grass",
+            "percentage": 0.4
+          },
+          {
+            "name": "Bark",
+            "percentage": 0.2
+          },
+          {
+            "name": "Leaves",
+            "percentage": 0.3
+          },
+          {
+            "name": "Fruits",
+            "percentage": 0.1
+          }
+        ],
+        "predators": [],
+        "deliciousness": 1
+      },
+      {
+        "name": "Gray Wolf",
+        "weight": {
+          "count": 40,
+          "unit": "kg"
+        },
+        "habitat": "Various habitats including forests, tundra, grasslands",
+        "endangered": false,
+        "foods": [
+          {
+            "name": "Deer",
+            "percentage": 0.3
+          },
+          {
+            "name": "Elk",
+            "percentage": 0.2
+          },
+          {
+            "name": "Moose",
+            "percentage": 0.2
+          },
+          {
+            "name": "Bison",
+            "percentage": 0.2
+          },
+          {
+            "name": "Small mammals",
+            "percentage": 0.1
+          }
+        ],
+        "predators": [
+          "Humans"
+        ],
+        "deliciousness": 3
+      },
+      {
+        "name": "Squirrel",
+        "weight": {
+          "count": 0.5,
+          "unit": "kg"
+        },
+        "habitat": "Various habitats including forests, urban areas",
+        "endangered": false,
+        "foods": [
+          {
+            "name": "Nuts",
+            "percentage": 0.4
+          },
+          {
+            "name": "Seeds",
+            "percentage": 0.3
+  
