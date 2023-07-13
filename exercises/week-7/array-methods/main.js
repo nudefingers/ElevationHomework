@@ -1,6 +1,6 @@
 $.ajax({
     url: `https://jsonplaceholder.typicode.com/users`
-}).done(function(data) {
+}).done(function (data) {
     let users = data
 
     // Exercise 1
@@ -13,12 +13,12 @@ $.ajax({
 
     // Exercise 3
     let users5Id = users.filter(u => u.address.zipcode.startsWith(`5`))
-                        .map(u => u.id)
+        .map(u => u.id)
     console.log(users5Id)
 
     // Exercise 4
     let cNames = users.map(u => u.name)
-                      .filter(u => u.toLowerCase().startsWith(`c`))
+        .filter(u => u.toLowerCase().startsWith(`c`))
     console.log(cNames)
 
     // Exercise 5
@@ -37,18 +37,8 @@ $.ajax({
 })
 
 
-const people = [
-    {id: 1, name: "Humbert", money: 499, hasAC: false},
-    {id: 2, name: "Bellatrix", money: 499, hasAC: true},
-    {id: 3, name: "Mola", money: 720, hasAC: false}
-]
-
-// let isCool = function(humbert){
-//     return (humbert.money > 500 || humbert.hasAC)
-// }
-
-// let print = (p) => console.log(p)
-
-// people.filter(isCool).map(p => p.name).forEach(print)
-
-console.log(people.find(p.id === 2))
+console.log("before setTimeout")
+setTimeout(function () {
+    console.log("in the callback")
+}, 1000)
+console.log("after setTimeout")
