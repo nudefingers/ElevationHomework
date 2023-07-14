@@ -10,6 +10,7 @@ const api_key = `&api_key=${key}`
 $.get(randomWordUrl)
     .then(words => $.get(`${booksUrl}${words[0]}`))
     .then(books => console.log(`The random book generator has chosen for you: ${books.items[0].volumeInfo.title}`))
+    .catch(error => console.log(error))
 
 
 // Exercise 2
@@ -20,7 +21,7 @@ $.get(randomWordUrl)
         const gifPromise = $.get(`${giphyUrl}${words}${api_key}`)
         return Promise.all([booksPromise, gifPromise])
     })
-
+    .catch(error => console.log(error))
     .then(([books, gif]) => {
         const title = books.items[0].volumeInfo.title
         const gifUrl = gif.data[0].images.downsized_large.url
