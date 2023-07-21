@@ -24,64 +24,98 @@ buttonProducts.addEventListener('click', function () {
     containerAboutUs.style.display = 'none'
     containerProduct.style.display = 'grid'
     containerCart.style.display = 'none'
+
+    displayProducts()
 })
 
 buttonCart.addEventListener('click', function () {
     containerAboutUs.style.display = 'none'
     containerProduct.style.display = 'none'
     containerCart.style.display = 'grid'
+
+    displayCart()
 })
 
+const displayProducts = function () {
+    while (containerProduct.firstChild) {
+        containerProduct.removeChild(containerProduct.firstChild)
+    }
 
-products.forEach(product => {
-    const div = document.createElement("div")
-    const name = document.createElement("h3")
-    const price = document.createElement("p")
-    const image = document.createElement("img")
-    const button = document.createElement("button")
+    products.forEach(product => {
+        const div = document.createElement("div")
+        const name = document.createElement("h3")
+        const price = document.createElement("p")
+        const image = document.createElement("img")
+        const button = document.createElement("button")
 
-    name.textContent = product.name
-    price.textContent = "Price: $" + product.price
-    image.src = product.img
-    button.textContent = "Add to Cart"
+        name.textContent = product.name
+        price.textContent = "Price: $" + product.price
+        image.src = product.img
+        button.textContent = "Add to Cart"
 
-    button.addEventListener("click", () => {
-        cart.push(product)
-        console.log("Product added to cart:", product.name);
-        console.log(cart)
+        button.addEventListener("click", () => {
+            cart.push(product)
+            console.log("Product added to cart:", product.name);
+            console.log(cart)
+        })
+
+        div.appendChild(name)
+        div.appendChild(price)
+        div.appendChild(image)
+        div.appendChild(button)
+
+        containerProduct.appendChild(div)
     })
 
-    div.appendChild(name)
-    div.appendChild(price)
-    div.appendChild(image)
-    div.appendChild(button)
-
-    containerProduct.appendChild(div)
-})
+}
 
 
-cart.forEach(product => {
-    const div = document.createElement("div")
-    const name = document.createElement("h3")
-    const price = document.createElement("p")
-    const image = document.createElement("img")
-    const button = document.createElement("button")
+const displayCart = function () {
+    while (containerCart.firstChild) {
+        containerCart.removeChild(containerCart.firstChild)
+    }
 
-    name.textContent = product.name
-    price.textContent = "Price: $" + product.price
-    image.src = product.img
-    button.textContent = "Remove"
+    const groupedCart = cart.reduce((acc, product) => {
+        if (!acc[product.name]) {
+            acc[product.name] = { ...product, quantity: 1 }
+        } else {
+            acc[product.name].quantity += 1
+        }
+        return acc
+    }, {})
 
-    button.addEventListener("click", () => {
-        let index = cart.indexOf(product)
-        cart.splice(index, 1)
-        console.log("Product remove from cart:", product.name);
+    const transformedArray = Object.values(groupedCart)
+
+    transformedArray.forEach(product => {
+        const div = document.createElement("div")
+        div.classList.add(product.name)
+        const name = document.createElement("h3")
+        const price = document.createElement("p")
+        const quantity = document.createElement("p")
+        const image = document.createElement("img")
+        const button = document.createElement("button")
+
+        name.textContent = product.name
+        price.textContent = "Price: $" + product.price
+        quantity.textContent = "Quantity: " + product.quantity
+        image.src = product.img
+        button.textContent = "Remove"
+
+        button.addEventListener("click", () => {
+            const name = button.parentElement.classList[0]
+            const index = cart.findIndex(p => p.name === name)
+            if (index !== -1) {
+                cart.splice(index, 1)
+            }
+            displayCart()
+        })
+
+        div.appendChild(name)
+        div.appendChild(price)
+        div.appendChild(quantity)
+        div.appendChild(image)
+        div.appendChild(button)
+
+        containerCart.appendChild(div)
     })
-
-    div.appendChild(name)
-    div.appendChild(price)
-    div.appendChild(image)
-    div.appendChild(button)
-
-    containerCart.appendChild(div)
-})
+}
