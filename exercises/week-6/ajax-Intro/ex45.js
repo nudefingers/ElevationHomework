@@ -7,9 +7,9 @@ const searchGif = function (cats) {
 
         if (firstGif) {
             let embedUrl = firstGif.embed_url
-            let $iframe = $(`<iframe>`)
-            $iframe.attr(`src`, embedUrl)
-            $(`body`).append($iframe)
+            let iframe = $(`<iframe>`)
+            iframe.attr(`src`, embedUrl)
+            $(`body`).append(iframe)
         }
     })
 }
