@@ -4,9 +4,7 @@ import React, { Component } from 'react';
 
 const Spamalot = () => {
     const spamCount = 500
-    const spamArray = Array.from({ length: spamCount }, (_, index) => {
-        return <Spam key={index} />
-    })
+    const spamArray = Array.from({ length: spamCount }, () => <Spam/>)
 
     return <React.Fragment>{spamArray}</React.Fragment>
 }
